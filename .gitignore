@@ -1,0 +1,188 @@
+# ============================================
+# Medical Wellness Assistant - .gitignore
+# ============================================
+
+# ============================================
+# Python
+# ============================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.venv
+env.bak/
+venv.bak/
+
+# ============================================
+# Model Files (Large - Do not commit)
+# ============================================
+# Mistral-7B Model
+Medical QA/models/*.gguf
+Medical QA/models/mistral-7b-instruct.gguf
+
+# Model weights and safetensors
+Medical QA/models/**/*.safetensors
+Medical QA/models/**/*.bin
+Medical QA/models/**/*.pt
+Medical QA/models/**/*.pth
+Medical QA/models/**/*.ckpt
+
+# BGE Model Cache (downloaded models)
+Medical QA/models/bge/
+Medical QA/models/mistral_7B/
+Medical QA/models/mistral_lora/
+
+# HuggingFace cache
+.cache/
+.huggingface/
+transformers_cache/
+
+# ============================================
+# Dataset Files (Large - Do not commit)
+# ============================================
+# Raw datasets (PDFs, CSVs, JSONs)
+Medical QA/datasets/raw/pubmedqa/**/*.csv
+Medical QA/datasets/final_dataset/**/*.jsonl
+
+Medical QA/datasets/raw/Rag/Ramdas Nayak Pathology Book.pdf
+Medical QA/datasets/raw/Rag/The-Gale-Encyclopedia-of-Medicine-3rd-Edition-staibabussalamsula.ac_.id_.pdf
+
+Medical QA/datasets/processed/train.jsonl
+Medical QA/datasets/processed/train_inst.jsonl
+# ============================================
+# RAG Files (Large - Do not commit)
+# ============================================
+# Chunk files (can be regenerated)
+Medical QA/rag/chunks/
+Medical QA/rag/chunks/**/*.jsonl
+
+# Embeddings and FAISS index (can be regenerated)
+Medical QA/rag/embeddings.npy
+Medical QA/rag/faiss_index.bin
+
+# Keep index_map.json (small metadata file)
+# Medical QA/rag/index_map.json
+
+# ============================================
+# Jupyter Notebooks
+# ============================================
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ============================================
+# Node.js / Frontend (MediChatUI)
+# ============================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Build outputs
+MediChatUI/dist/
+MediChatUI/build/
+MediChatUI/.next/
+MediChatUI/out/
+
+# ============================================
+# IDE and Editor Files
+# ============================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# ============================================
+# OS Files
+# ============================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# ============================================
+# Environment and Secrets
+# ============================================
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+secrets/
+.secrets
+
+# ============================================
+# Logs
+# ============================================
+*.log
+logs/
+*.log.*
+
+# ============================================
+# Temporary Files
+# ============================================
+*.tmp
+*.temp
+*.bak
+*.backup
+*.swp
+*.swo
+.cache/
+
+# ============================================
+# Testing
+# ============================================
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.hypothesis/
+
+# ============================================
+# Documentation Build
+# ============================================
+docs/_build/
+site/
+
+# ============================================
+# Project Specific
+# ============================================
+# Keep structure but ignore large files
+!Medical QA/datasets/raw/.gitkeep
+!Medical QA/datasets/processed/.gitkeep
+!Medical QA/datasets/final_dataset/.gitkeep
+!Medical QA/rag/chunks/.gitkeep
+!Medical QA/models/.gitkeep
+
